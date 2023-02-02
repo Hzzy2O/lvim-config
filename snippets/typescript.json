@@ -1,0 +1,17 @@
+{
+  "export const": {
+    "prefix": "exc",
+    "body": [
+      "export const ${1:NAME} = ${2:VALUE};"
+    ]
+  },
+  "export function": {
+    "prefix": "exf",
+    "body": [
+      "export function ${1:NAME}(${2:PARAMS}) {",
+      "\t$0",
+      "}"
+    ]
+  }
+
+}

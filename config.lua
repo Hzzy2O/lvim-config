@@ -1,0 +1,8 @@
+require("option")
+require("whichkey")
+require("predefined")
+require("plugin")
+require("autocmd")
+require("keysbinding")
+require("formatter")
+require("linter")
