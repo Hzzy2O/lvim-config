@@ -16,19 +16,16 @@ if is_windows then
   ]]
 
   lvim.builtin.terminal.shell = "pwsh.exe -NoLogo"
-  lvim.builtin.terminal.execs = {
-    { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
-    { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
-    { vim.o.shell, "<M-3>", "Float Terminal", "float", nil },
-  }
   vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h10" }
   vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
 else
-
+  vim.g.neovide_input_macos_alt_is_meta = 1
   vim.opt.guifont = { "JetBrainsMono Nerd Font", "h10" }
 end
 
 lvim.builtin.terminal.direction = "horizontal"
-
-require 'lspconfig'.unocss.setup {}
-
+lvim.builtin.terminal.execs = {
+  { vim.o.shell, "<M-2>", "Horizontal Terminal", "horizontal", 0.3 },
+  { vim.o.shell, "<M-3>", "Vertical Terminal", "vertical", 0.4 },
+  { vim.o.shell, "<M-1>", "Float Terminal", "float", nil },
+}

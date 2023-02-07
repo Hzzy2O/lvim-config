@@ -3,6 +3,9 @@ lvim.plugins = {
     "tpope/vim-surround",
   },
   {
+    "dart-lang/dart-vim-plugin"
+  },
+  {
     "simrat39/symbols-outline.nvim",
     config = function()
       require("symbols-outline").setup()
@@ -68,5 +71,6 @@ lvim.plugins = {
   require("plugin.markdown-preview"),
   require("plugin.lsp-signature"),
   require("plugin.git-blame"),
+  require("plugin.flutter-tools")
   -- require("plugin.lspsaga"),
 }
