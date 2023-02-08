@@ -2,33 +2,33 @@ local M = {
 
   bind = {
 
+    -- down 5 times
     n_v_5j = "<C-j>",
+    -- up 5 times
     n_v_5k = "<C-k>",
-
-    s_tab = {
-      split = "ts",
-      prev = "th",
-      next = "tl",
-      first = "tj",
-      last = "tk",
-      close = "tc",
-    },
-
-
-    terminal_to_normal = "<Esc>",
+    -- open file under cursor in new tab
+    open_file_undercursor = "gf",
+    -- open file under cursor in new window
+    open_file_undercursor_split = "gs",
   },
   -- leap
   leap = {
+    -- jump to the next word
     forwrdTo = "<C-s>",
+    -- jump to the previous word
     backwardTo = "<C-w>",
   },
   -- visual multi
   visualMulti = {
+    -- exchange selection
     transposition = "<C-t>",
-    addCursor = "<C-\\>",
+    addCursor = "<M-m>",
   },
 
   terminal = {
+    -- quit to normal mode
+    tonormal = "<C-x>",
+    -- toogle all terminal
     toggle = "<C-t>",
     horizontal = "<C-n>",
     vertical = "tv",
@@ -42,9 +42,7 @@ local M = {
 
   nvimTree = {
 
-    enable = true,
-
-    edit = { "o", "<2-LeftMouse>" },
+    edit = "o",
     -- toggle .gitignore (git enable)
     toggle_git_ignored = "i",
     -- Hide (dotfiles)
@@ -53,7 +51,7 @@ local M = {
     toggle_custom = "u",
 
     refresh = "R",
-    -- 文件操作
+    ---- file operation
     create = "a",
     remove = "d",
     rename = "r",
@@ -74,13 +72,10 @@ local M = {
   },
 
   bufferLine = {
-
+    -- switch to left tab
     prev = "H",
+    -- switch to right tab
     next = "L",
-    close_left = "<leader>bh",
-    close_right = "<leader>bl",
-    close_others = "<leader>bo",
-    close_pick = "<leader>bp",
   },
 
   comment = {
@@ -112,12 +107,13 @@ local M = {
   },
 
   lsp = {
+    -- create
     rename = "<leader>rn",
     code_action = "<leader>ca",
     format = "<leader>f",
     definition = "gd",
     references = "gr",
-    hover = "gh",
+    hover = "K",
     -- diagnostic
     open_flow = "gp",
     goto_next = "gj",

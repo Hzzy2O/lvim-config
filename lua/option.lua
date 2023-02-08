@@ -2,6 +2,14 @@ vim.opt.relativenumber = true
 vim.opt.showcmd = true
 vim.opt.foldmethod = "indent"
 vim.opt.foldenable = false
+-- vim.api.nvim_exec(
+--   [[
+-- let $GIT_EDITOR = "nvr --remote-wait +'set bufhidden=wipe'"
+-- ]] ,
+--   false
+-- )
+vim.env.GIT_EDITOR = 'nvr -cc tabedit'
+
 
 local is_windows = vim.loop.os_uname().version:match "Windows"
 

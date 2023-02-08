@@ -46,8 +46,10 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.cmp.formatting.source_names["copilot"] = "(Copilot)"
 table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 
-local entry_filter = lvim.builtin.cmp.sources[3].entry_filter
+-- unocss support
+-- local entry_filter = lvim.builtin.cmp.sources[3].entry_filter
 table.insert(lvim.builtin.cmp.sources, 3 , { name = "nvim_lsp", trigger_characters = { "-" } } )
+require 'lspconfig'.unocss.setup {}
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {

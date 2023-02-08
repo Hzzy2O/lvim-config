@@ -26,6 +26,9 @@ setKeyMap(N, Keys.leap.backwardTo, "<Plug>(leap-backward-till)")
 -- visual-multi
 setKeyMap(N, Keys.visualMulti.transposition, "<Plug>(VM-Transpose)")
 setKeyMap(N, Keys.visualMulti.addCursor, "<Plug>(VM-Add-Cursor-At-Pos)")
+-- open under cursor
+setKeyMap(N, Keys.bind.open_file_undercursor, "<C-w>gf")
+setKeyMap(N, Keys.bind.open_file_undercursor_split, "gf")
 
 ----- 插入模式
 setKeyMap(I, "<C-g>", "<C-g>u")
@@ -33,3 +36,6 @@ setKeyMap(I, "<C-j>", "<C-g>j")
 setKeyMap(I, "<C-k>", "<C-g>k")
 setKeyMap(I, "<C-h>", "<left>")
 setKeyMap(I, "<C-l>", "<right>")
+
+----- 终端模式
+vim.cmd("tnoremap <C-x> <C-\\><C-n>")

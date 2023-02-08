@@ -29,9 +29,6 @@ lvim.builtin.which_key.mappings["t"] = {
   w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace Diagnostics" },
   T = { "<cmd>TodoTrouble<cr>","Todo List"}
 }
-
-lvim.builtin.which_key.mappings.l.R = { ":LspRestart<CR>", "Restart LSP" }
-lvim.builtin.which_key.mappings.l.r = { "<cmd>Lspsaga rename<CR>", "Rename" }
 lvim.builtin.which_key.mappings["o"] = { "<cmd>SymbolsOutline<cr>", "Toggle Outline" }
 
 lvim.builtin.which_key.mappings["W"] = {
@@ -51,6 +48,10 @@ lvim.builtin.which_key.mappings["W"] = {
   e = { "<C-w>=", "size equal" },
 
 }
+lvim.builtin.which_key.mappings.b.o = { ":BufferLineCloseRight<CR>:BufferLineCloseLeft<CR>", "close others"}
+
+lvim.builtin.which_key.mappings.l.r = { "<cmd>Lspsaga rename<CR>", "Rename" }
+lvim.builtin.which_key.mappings.l.R = { ":LspRestart<CR>", "Restart LSP" }
 
 local Terminal = require('toggleterm.terminal').Terminal
 local Lazygit  = Terminal:new({
