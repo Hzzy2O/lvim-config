@@ -1,9 +1,9 @@
 lvim.plugins = {
   {
-    "nvim-telescope/telescope-media-files.nvim"
+    "tpope/vim-surround",
   },
   {
-    "tpope/vim-surround",
+    "dart-lang/dart-vim-plugin",
   },
   {
     "simrat39/symbols-outline.nvim",
@@ -71,5 +71,7 @@ lvim.plugins = {
   require("plugin.markdown-preview"),
   require("plugin.lsp-signature"),
   require("plugin.git-blame"),
+  require("plugin.flutter-tools"),
+  require("plugin.code-runner"),
   -- require("plugin.lspsaga"),
 }

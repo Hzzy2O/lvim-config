@@ -1,4 +1,10 @@
 -- User Config for predefined plugins
+-- lspconfig
+local lsp = require("lspconfig")
+
+lsp.unocss.setup({})
+lsp.dartls.setup({})
+
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 -- lvim.builtin.cmp.sources[3].trigger_characters = { {'-'} }
 lvim.builtin.alpha.active = true
@@ -49,12 +55,12 @@ table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 -- unocss support
 -- local entry_filter = lvim.builtin.cmp.sources[3].entry_filter
 table.insert(lvim.builtin.cmp.sources, 3 , { name = "nvim_lsp", trigger_characters = { "-" } } )
-require 'lspconfig'.unocss.setup {}
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
+  "dart",
   "javascript",
   "json",
   "lua",
