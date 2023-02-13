@@ -26,6 +26,9 @@ if is_windows then
   lvim.builtin.terminal.shell = "pwsh.exe -NoLogo"
   vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h10" }
   vim.api.nvim_set_keymap('n', '<F11>', ":let g:neovide_fullscreen = !g:neovide_fullscreen<CR>", {})
+  require("flutter-tools.config").set({
+    flutter_path = "D://Program Files/flutter/bin/flutter.bat"
+  })
 else
   vim.g.neovide_input_macos_alt_is_meta = 1
   vim.opt.guifont = { "JetBrainsMono Nerd Font", "h10" }
