@@ -53,20 +53,30 @@ lvim.builtin.which_key.mappings.b.o = { ":BufferLineCloseRight<CR>:BufferLineClo
 lvim.builtin.which_key.mappings.l.r = { "<cmd>Lspsaga rename<CR>", "Rename" }
 lvim.builtin.which_key.mappings.l.R = { ":LspRestart<CR>", "Restart LSP" }
 
-local Terminal = require('toggleterm.terminal').Terminal
-local Lazygit  = Terminal:new({
-  count = 12, -- make sure we dont overtake the normal terminal on 1
-  direction = "float",
-  float_opts = {
-    border = "double",
-  },
-  cmd = "lazygit",
-  hidden = true
-})
+lvim.builtin.which_key.mappings.F = {
+  name = "+Flutter-tools",
+  r = { "<cmd>FlutterRun<cr>", "Flutter Run" },
+  d = { "<cmd>FlutterDevices<cr>", "Flutter Devices" },
+  e = { "<cmd>FlutterEmulators<cr>", "Flutter Emulators" },
+  l = { "<cmd>FlutterReload<cr>", "Flutter Reload" },
+  s = { "<cmd>FlutterRestart<cr>", "Flutter Restart" },
+  q = { "<cmd>FlutterQuit<cr>", "Flutter Quit" },
+}
 
-function Lazygit_toggle()
-  Lazygit:toggle()
-end
+-- local Terminal = require('toggleterm.terminal').Terminal
+-- local Lazygit  = Terminal:new({
+--   count = 12, -- make sure we dont overtake the normal terminal on 1
+--   direction = "float",
+--   float_opts = {
+--     border = "double",
+--   },
+--   cmd = "lazygit",
+--   hidden = true
+-- })
+
+-- function Lazygit_toggle()
+--   Lazygit:toggle()
+-- end
 
 -- lvim.builtin.which_key.mappings.g.g = { "<cmd>lua Lazygit_toggle()<CR>", "LazyGit" }
 
