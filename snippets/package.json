@@ -19,6 +19,10 @@
           "typescriptreact"
         ],
         "path": "./typescript.json"
+      },
+      {
+        "language": "dart",
+        "path": "./dart.json"
       }
     ]
   }

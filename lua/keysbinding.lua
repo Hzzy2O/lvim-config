@@ -29,6 +29,8 @@ setKeyMap(N, Keys.visualMulti.addCursor, "<Plug>(VM-Add-Cursor-At-Pos)")
 -- open under cursor
 setKeyMap(N, Keys.bind.open_file_undercursor, "<C-w>gf")
 setKeyMap(N, Keys.bind.open_file_undercursor_split, "gf")
+-- lsp
+setKeyMap(N, Keys.lsp.open_flow, "<cmd>lua vim.diagnostic.open_float()<CR>")
 
 ----- 插入模式
 setKeyMap(I, "<C-g>", "<C-g>u")
