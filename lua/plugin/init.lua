@@ -73,5 +73,6 @@ lvim.plugins = {
   require("plugin.git-blame"),
   require("plugin.flutter-tools"),
   require("plugin.code-runner"),
+  require("plugin.hover"),
   -- require("plugin.lspsaga"),
 }
