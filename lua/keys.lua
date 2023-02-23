@@ -63,11 +63,8 @@ local M = {
     copy_absolute_path = "gy",
     toggle_file_info = "I",
     tabnew = "t",
-    -- 进入下一级
     cd = "]",
-    -- 进入上一级
     dir_up = "[",
-    -- 关闭节点
     close_node = "W",
   },
 
@@ -80,12 +77,12 @@ local M = {
 
   comment = {
     enable = true,
-    -- Normal 模式快捷键
+    -- Normal mode
     toggler = {
-      line = "gcc", -- 行注释
-      block = "gbc", -- 块注释
+      line = "gcc",
+      block = "gbc",
     },
-    -- Visual 模式
+    -- Visual mode
     opleader = {
       line = "gc",
       bock = "gb",

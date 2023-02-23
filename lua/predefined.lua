@@ -1,3 +1,13 @@
+-- function updateTable(tbl, targetValue, newValue)
+--   for k, v in pairs(tbl) do
+--     if v == targetValue then
+--         tbl[k] = newValue
+--       return true
+--       end
+--   end
+--   return false
+-- end
+
 -- User Config for predefined plugins
 -- lspconfig
 local lsp = require("lspconfig")

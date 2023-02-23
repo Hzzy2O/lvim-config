@@ -63,20 +63,16 @@ lvim.builtin.which_key.mappings.F = {
   q = { "<cmd>FlutterQuit<cr>", "Flutter Quit" },
 }
 
--- local Terminal = require('toggleterm.terminal').Terminal
--- local Lazygit  = Terminal:new({
---   count = 12, -- make sure we dont overtake the normal terminal on 1
---   direction = "float",
---   float_opts = {
---     border = "double",
---   },
---   cmd = "lazygit",
---   hidden = true
--- })
+function diffview_file_history_with_current_file()
+  local current_file_path = vim.fn.expand('%:p')
+  vim.cmd("DiffviewFileHistory " .. current_file_path)
+end
+lvim.builtin.which_key.mappings.g.v = { "<cmd>DiffviewFileHistory<cr>", "Diffview" }
+lvim.builtin.which_key.mappings.g.V = { "<cmd>lua diffview_file_history_with_current_file()<cr>", "Diffview current file" }
+lvim.builtin.which_key.mappings.g.i = { "<cmd>DiffviewClose<cr>", "DiffviewClose" }
 
--- function Lazygit_toggle()
---   Lazygit:toggle()
--- end
-
--- lvim.builtin.which_key.mappings.g.g = { "<cmd>lua Lazygit_toggle()<CR>", "LazyGit" }
-
+lvim.builtin.which_key.mappings.C = {
+  name = "+ChatGpt",
+  c = { "<cmd>ChatGPT<cr>", "ChatGPT" },
+  a = { "<cmd>ChatGPTActAs<cr>", "ChatGPT Act As" },
+}
