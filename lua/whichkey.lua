@@ -61,6 +61,8 @@ lvim.builtin.which_key.mappings.F = {
   l = { "<cmd>FlutterReload<cr>", "Flutter Reload" },
   s = { "<cmd>FlutterRestart<cr>", "Flutter Restart" },
   q = { "<cmd>FlutterQuit<cr>", "Flutter Quit" },
+  c = { "<cmd>FlutterLogClear<cr>", "Flutter Log Clear" },
+  g = { "<cmd>FlutterPubGet<cr>", "Flutter Pub Get" },
 }
 
 function diffview_file_history_with_current_file()

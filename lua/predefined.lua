@@ -1,12 +1,12 @@
--- function updateTable(tbl, targetValue, newValue)
---   for k, v in pairs(tbl) do
---     if v == targetValue then
---         tbl[k] = newValue
---       return true
---       end
---   end
---   return false
--- end
+function updateTable(tbl, findKey, newValue)
+  for k, v in pairs(tbl) do
+    local t = findKey(v)
+    if t then
+      return true
+      end
+  end
+  return false
+end
 
 -- User Config for predefined plugins
 -- lspconfig
@@ -64,7 +64,14 @@ table.insert(lvim.builtin.cmp.sources, 1, { name = "copilot" })
 
 -- unocss support
 -- local entry_filter = lvim.builtin.cmp.sources[3].entry_filter
-table.insert(lvim.builtin.cmp.sources, 3 , { name = "nvim_lsp", trigger_characters = { "-" } } )
+-- table.insert(lvim.builtin.cmp.sources, 3 , { name = "nvim_lsp", trigger_characters = { "-" } } )
+updateTable(lvim.builtin.cmp.sources, function(source)
+  if source.name == "nvim_lsp" then
+    source.trigger_characters = { "-" }
+    source.entry_filter = nil
+    return true
+  end
+end)
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -86,7 +93,6 @@ lvim.builtin.treesitter.ensure_installed = {
   "toml",
   "vue",
   "html",
-  "solidity",
 }
 
 lvim.builtin.treesitter.highlight.enable = true
