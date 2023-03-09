@@ -65,6 +65,8 @@ lvim.builtin.which_key.mappings.F = {
   g = { "<cmd>FlutterPubGet<cr>", "Flutter Pub Get" },
 }
 
+lvim.builtin.which_key.mappings.S = { "<cmd>lua require('spectre').open()<cr>", "Spectre" }
+
 function diffview_file_history_with_current_file()
   local current_file_path = vim.fn.expand('%:p')
   vim.cmd("DiffviewFileHistory " .. current_file_path)
@@ -78,3 +80,22 @@ lvim.builtin.which_key.mappings.C = {
   c = { "<cmd>ChatGPT<cr>", "ChatGPT" },
   a = { "<cmd>ChatGPTActAs<cr>", "ChatGPT Act As" },
 }
+function _G.Toggle_venn()
+  local venn_enabled = vim.inspect(vim.b.venn_enabled)
+  if venn_enabled == "nil" then
+      vim.b.venn_enabled = true
+    vim.cmd [[setlocal ve=all]]
+    vim.api.nvim_buf_set_keymap(0, "n", "J", "<C-v>j:VBox<CR>", { noremap = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "K", "<C-v>k:VBox<CR>", { noremap = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "L", "<C-v>l:VBox<CR>", { noremap = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "H", "<C-v>h:VBox<CR>", { noremap = true })
+        -- draw a box by pressing "f" with visual selection
+    vim.api.nvim_buf_set_keymap(0, "v", "f", ":VBox<CR>", { noremap = true })
+  else
+    vim.cmd [[setlocal ve=]]
+    vim.cmd [[mapclear <buffer>]]
+    vim.b.venn_enabled = nil
+  end
+end
+
+lvim.builtin.which_key.mappings.v = { ":lua Toggle_venn()<CR>" , "venn" }

@@ -16,6 +16,10 @@ lvim.plugins = {
     cmd = "TroubleToggle"
   },
   {
+    "jbyuki/venn.nvim",
+    cmd = "VBox"
+  },
+  {
     "windwp/nvim-ts-autotag",
     config = function()
       require("nvim-ts-autotag").setup()
@@ -76,6 +80,13 @@ lvim.plugins = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
     }
+  },
+  {
+    "windwp/nvim-spectre",
+    event = "BufRead",
+    config = function()
+      require("spectre").setup()
+    end,
   },
   require("plugin.flit"),
   {

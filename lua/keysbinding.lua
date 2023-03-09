@@ -41,6 +41,8 @@ setKeyMap(I, "<C-l>", "<right>")
 ----- terminal mode
 vim.cmd("tnoremap <C-x> <C-\\><C-n>")
 
+vim.cmd("noremap <C-b> <C-v>")
+
 ---- nvim-tree
 lvim.builtin.nvimtree.setup.view.mappings.list = {
 	{ key = { "l", "<CR>", "<2-LeftMouse>" }, action = "edit" },
