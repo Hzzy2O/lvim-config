@@ -24,7 +24,14 @@ formatters.setup {
     filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html",
       "json", "jsonc", "yaml", "markdown", "markdown.mdx", "graphql", "handlebars" },
     args = { "--fix" },
-  }
+  },
+  { command = "black",
+    filetypes = { "python" },
+    extra_args = function(params)
+      return params.bufname:match("kialo") and { "-l 120" } or { "-l 80" }
+    end,
+  },
+  { command = "isort", filetypes = { "python" } },
   -- {
   --   commang = "eslint_d",
   --   filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "css", "scss", "less", "html",
