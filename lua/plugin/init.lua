@@ -88,10 +88,28 @@ lvim.plugins = {
       require("spectre").setup()
     end,
   },
-  require("plugin.flit"),
+  -- {
+  --   'wfxr/minimap.vim',
+  --   build = "cargo install --locked code-minimap",
+  --   -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+  --   config = function ()
+  --     vim.cmd ("let g:minimap_width = 10")
+  --     vim.cmd ("let g:minimap_auto_start = 1")
+  --     vim.cmd ("let g:minimap_auto_start_win_enter = 1")
+  --   end,
+  -- },
+  {
+    "Hzzy2O/cryptowatch.nvim",
+    event = "VimEnter",
+    config = function ()
+      local list = require("cryptowatch").setup()
+      lvim.builtin.lualine.sections.lualine_z = list
+    end
+  },
   {
     "mg979/vim-visual-multi"
   },
+  require("plugin.flit"),
   require("plugin.markdown-preview"),
   require("plugin.lsp-signature"),
   require("plugin.git-blame"),

@@ -1,9 +1,9 @@
-function updateTable(tbl, findKey, newValue)
-  for k, v in pairs(tbl) do
+local function updateTable(tbl, findKey, _)
+  for _, v in pairs(tbl) do
     local t = findKey(v)
     if t then
       return true
-      end
+    end
   end
   return false
 end
@@ -11,6 +11,34 @@ end
 -- User Config for predefined plugins
 -- lspconfig
 local lsp = require("lspconfig")
+local configs = require("lspconfig.configs")
+
+configs.solidity = {
+  default_config = {
+    cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+    filetypes = { "solidity" },
+    root_dir = lsp.util.find_git_ancestor,
+    single_file_support = true,
+  }
+}
+
+lsp.solidity.setup({})
+lsp.cssls.setup({
+  settings = {
+    css = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore",
+      }
+    },
+    scss = {
+      validate = true,
+      lint = {
+        unknownAtRules = "ignore",
+      }
+    }
+  }
+})
 
 lsp.unocss.setup({})
 lsp.dartls.setup({})
@@ -98,11 +126,6 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.treesitter.rainbow.enable = true
 
--- set lualine
-lvim.builtin.lualine.sections.lualine_a = { "mode" }
-lvim.builtin.lualine.inactive_sections.lualine_a = { "mode" }
 
 -- set whick key
 lvim.builtin.which_key.setup.plugins.registers = true
-
-
