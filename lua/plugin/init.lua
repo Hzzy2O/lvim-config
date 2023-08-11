@@ -100,11 +100,17 @@ lvim.plugins = {
   -- },
   {
     "Hzzy2O/cryptowatch.nvim",
-    event = "VimEnter",
     config = function ()
       local list = require("cryptowatch").setup()
       lvim.builtin.lualine.sections.lualine_z = list
     end
+  },
+  {
+    "max397574/colortils.nvim",
+    cmd = "Colortils",
+    config = function()
+      require("colortils").setup()
+    end,
   },
   {
     "mg979/vim-visual-multi"

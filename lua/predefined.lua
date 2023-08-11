@@ -21,6 +21,7 @@ configs.solidity = {
     single_file_support = true,
   }
 }
+configs.unocss = require("lsp.unocss")
 
 lsp.solidity.setup({})
 lsp.cssls.setup({
